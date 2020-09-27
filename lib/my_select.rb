@@ -1,14 +1,13 @@
-def my_select(collection)
-  arr = []
+def my_select(arr)
   index = 0
-  w = collection.length
-  while w > 0
-    f = yield collection[index]
-    if f == true
-      arr.push(collection[index])
+  new_arr = []
+  while arr.length > index
+    if yield(arr[index]) == true 
+      new_arr << arr[index]
     end
-    index += 1
-    w -= 1
+    index += 1 
   end
-  arr
+  
+  new_arr
 end
+    
